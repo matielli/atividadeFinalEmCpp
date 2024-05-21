@@ -2,6 +2,7 @@
 #include <string>
 #include<stdio.h>
 using namespace std;
+int controle =0 ;
 int menu;
 int ID[1000];
 string Titulo[1000];
@@ -23,18 +24,41 @@ cin >> menu;
 
 if (menu == 1){
     cout << "ID:";
-    cin >> ID[1000];
+    cin >> ID[0];
     cout << "Titulo:";
-    cin >> Titulo[1000];
+    cin >> Titulo[0];
     cout << "Descrição: ";
-    cin.ignore(); getline(cin, Descricao[1000]);
+    cin.ignore(); getline(cin, Descricao[0]);
     cout << "Data De Vencimento: ";
-    cin.ignore(); getline(cin, DataDeVencimento[1000]);
+    cin.ignore(); getline(cin, DataDeVencimento[0]);
     cout << "Status: ";
-    cin.ignore(); getline(cin, Status[1000]);
+    cin.ignore(); getline(cin, Status[0]);
 }
-return 0;
+
+ 
+if (menu == 2){
+
+    for (int i = 0; i < controle; i++){
+
+    cout << "Digite o seu ID da tarefa: ";
+    cin >> ID[0];
+    cout << "Digite o Titulo: ";
+    cin >> Titulo[0];
+    cout << "Digite a Descricao da tarefa: ";
+    cin.ignore(); getline(cin, Descricao[0]);
+    cout << "Digite a Data De Vencimento: ";
+    cin.ignore(); getline(cin, DataDeVencimento[0]);
+    cout << "Digite o Status: ";
+    cin.ignore(); getline(cin, Status[0]);
+    }
+
 }
+else{
+
+}    return 0;
+
+}
+
 
 
 
