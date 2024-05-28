@@ -1,17 +1,20 @@
 #include <iostream>
 #include <string>
 #include<stdio.h>
+#include <iomanip>
 using namespace std;
-int controle =0 ;
+int controle = 0;
 int menu;
-int ID[1000];
-string Titulo[1000];
-string Descricao[1000];
-string DataDeVencimento[1000];
-string Status[1000];
+int ID[999];
+std::string Titulo[999];
+std::string Descricao[999];
+std::string DataDeVencimento[999];
+std::string Status[999];
 int main (){
-
-cout << "Sistema De Gerenciamento De Tarefas" << endl;
+    int menu = 0;
+    
+    do{
+        cout << "Sistema De Gerenciamento De Tarefas" << endl;
 cout << "1. Adicionar Tarefa" << endl;
 cout << "2. Visualizar Tarefa" << endl;
 cout << "3. Editar Tarefa" << endl;
@@ -21,41 +24,46 @@ cout << "6. Filtrar Taferas Por Status" << endl;
 cout << "0. Sair" << endl;
 
 cin >> menu;
+if (menu == 0) 
+cout << "Tarefa Finalizada Com Sucesso!" << endl;
+
 
 if (menu == 1){
-    cout << "ID:";
-    cin >> ID[0];
-    cout << "Titulo:";
-    cin >> Titulo[0];
-    cout << "Descrição: ";
-    cin.ignore(); getline(cin, Descricao[0]);
-    cout << "Data De Vencimento: ";
-    cin.ignore(); getline(cin, DataDeVencimento[0]);
-    cout << "Status: ";
-    cin.ignore(); getline(cin, Status[0]);
+    ID[controle] = controle;
+    cout << "Titulo:\n";
+    cin >> Titulo[controle];
+    cout << "Descrição:\n ";
+    cin >> Descricao[controle];
+    cout << "Data De Vencimento:\n ";
+    cin >> DataDeVencimento[controle];
+    cout << "Status:\n ";
+    cin >> Status[controle];
+     controle ++;
 }
 
  
 if (menu == 2){
-
+cout <<"Lista De Tarefas" << endl;
     for (int i = 0; i < controle; i++){
-
-    cout << "Digite o seu ID da tarefa: ";
-    cin >> ID[0];
-    cout << "Digite o Titulo: ";
-    cin >> Titulo[0];
-    cout << "Digite a Descricao da tarefa: ";
-    cin.ignore(); getline(cin, Descricao[0]);
-    cout << "Digite a Data De Vencimento: ";
-    cin.ignore(); getline(cin, DataDeVencimento[0]);
-    cout << "Digite o Status: ";
-    cin.ignore(); getline(cin, Status[0]);
+        cout << i;
+        cout << "ID: " << ID[i]  << endl;
+        cout << "Titulo: " << Titulo[i] << endl;
+        cout << "Descricao: " << Descricao[i] << endl;
+        cout << "DataDeVencimento: " << DataDeVencimento[i] << endl;
+        cout << "Status: " << Status[i] << endl;
     }
 
+    
 }
-else{
+if (menu == 3){
+    
 
-}    return 0;
+    }
+
+    }while (menu !=0);
+    
+
+   return 0;
 
 }
 
