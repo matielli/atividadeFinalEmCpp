@@ -48,11 +48,13 @@ if (menu == 1){
 if (menu == 2){
 cout <<"Lista De Tarefas" << endl;
     for (int i = 0; i < controle; i++){
+        if (ID[i] != -1){
         cout << "ID:" << ID[i]  << endl;
         cout << "Titulo: " << Titulo[i] << endl;
         cout << "Descricao: " << Descricao[i] << endl;
         cout << "DataDeVencimento (DD/MM/AAAA): " << DataDeVencimento[i] << endl;
         cout << "Status (1 - Pendente, 2 - Em Progresso, 3 - Concluída): " << Status[i] << endl;
+        }
     }
 
     
@@ -109,13 +111,13 @@ if (menu == 3){
  }
 
      if (menu == 6) {
-        cout << "Digite o(s) Titulo(s) da(s) tarefa(s) que deseja filtrar: ";
+        cout << "Digite o status da tarefa que deseja filtrar: ";
         cin >> procurar;
         
         for (int i = 0; i < controle; i++){
 
-              if (procurar == Titulo[i]) {
-                Titulo[i] == procurar;
+              if (procurar == Status[i]) {
+                Status[i] == procurar;
 
                  cout << "ID: " << ID[i] << endl;
                     cout << "Titulo: " << Titulo[i] << endl;
