@@ -6,6 +6,9 @@ using namespace std;
 int controle = 0;
 int menu;
 int ID[999];
+int apagar = -1;
+std::string busca;
+std::string procurar;
 std::string Titulo[999];
 std::string Descricao[999];
 std::string DataDeVencimento[999];
@@ -73,23 +76,63 @@ if (menu == 3){
 
     }
 
-    if (menu == 4){
-        int apagar;
-        cout << "Digite o ID que voce quer apagar.\n";
+        else if (menu == 4) {
+
+        cout << "Digite o ID da tarefa que deseja remover: " << endl;
         cin >> apagar;
+        for (int i = 0; i < controle; i++) {
+            if (ID[i] == apagar) {        
+                ID[i] = -1;
+                }
 
         cout << "Tarefa apagada com sucesso!" << endl;
     }
+        }
+    
+        if (menu == 5) {
+            
+            cout << "Digite o título da tarefa que deseja buscar: ";
+            cin >> busca;
+            for (int i = 0; i < controle; i++) {
+                if ( busca == Titulo[i]) {
+                    cout << "ID: " << ID[i] << endl;
+                    cout << "Titulo: " << Titulo[i] << endl;
+                    cout << "Descrição: " << Descricao[i] << endl;
+                    cout << "DataDeVencimento: " << DataDeVencimento[i] << endl;
+                    cout << "Status: " << Status[i] << endl;
 
-    if (menu == 5){
-        int buscar;
+
+                }
+                
+            }
+            
+ }
+
+     if (menu == 6) {
+        cout << "Digite o(s) Titulo(s) da(s) tarefa(s) que deseja filtrar: ";
+        cin >> procurar;
+        
+        for (int i = 0; i < controle; i++){
+
+              if (procurar == Titulo[i]) {
+                Titulo[i] == procurar;
+
+                 cout << "ID: " << ID[i] << endl;
+                    cout << "Titulo: " << Titulo[i] << endl;
+                    cout << "Descrição: " << Descricao[i] << endl;
+                    cout << "DataDeVencimento: " << DataDeVencimento[i] << endl;
+                    cout << "Status: " << Status[i] << endl;
+
+            }   
+
+            }
+        }
         
     
     
     
-    }
-
-}while (menu !=0);
+    
+    }while (menu !=0);
     
     return 0;
    
