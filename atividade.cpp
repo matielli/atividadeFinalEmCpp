@@ -16,7 +16,7 @@ std::string Status[999];
 int main (){
     int menu = 0;
     
-    do{
+    do{ //bloco do codigo a ser executado
         cout << "Sistema De Gerenciamento De Tarefas" << endl;
 cout << "1. Adicionar Tarefa" << endl;
 cout << "2. Visualizar Tarefa" << endl;
@@ -27,7 +27,7 @@ cout << "6. Filtrar Taferas Por Status" << endl;
 cout << "0. Sair" << endl;
 
 cin >> menu;
-if (menu == 0) 
+if (menu == 0) // if se a condiçao for verdadeira
 cout << "Tarefa Finalizada Com Sucesso!" << endl;
 
 
@@ -78,7 +78,8 @@ if (menu == 3){
 
     }
 
-        else if (menu == 4) {
+        else if (menu == 4) { // se a condiçao1 for falsa e a condiçao2 for verdadeira
+            // for= bloco a ser repetido
 
         cout << "Digite o ID da tarefa que deseja remover: " << endl;
         cin >> apagar;
@@ -95,12 +96,12 @@ if (menu == 3){
             
             cout << "Digite o título da tarefa que deseja buscar: ";
             cin >> busca;
-            for (int i = 0; i < controle; i++) {
+            for (int i = 0; i < controle; i++) { // for= bloco a ser repetido
                 if ( busca == Titulo[i]) {
                     cout << "ID: " << ID[i] << endl;
                     cout << "Titulo: " << Titulo[i] << endl;
                     cout << "Descrição: " << Descricao[i] << endl;
-                    cout << "DataDeVencimento: " << DataDeVencimento[i] << endl;
+                    cout << "DataDeVencimento (DD/MM/AAAA): " << DataDeVencimento[i] << endl;
                     cout << "Status: " << Status[i] << endl;
 
 
@@ -114,7 +115,7 @@ if (menu == 3){
         cout << "Digite o status da tarefa que deseja filtrar: ";
         cin >> procurar;
         
-        for (int i = 0; i < controle; i++){
+        for (int i = 0; i < controle; i++){ // for= bloco a ser repetido
 
               if (procurar == Status[i]) {
                 Status[i] == procurar;
@@ -122,7 +123,7 @@ if (menu == 3){
                  cout << "ID: " << ID[i] << endl;
                     cout << "Titulo: " << Titulo[i] << endl;
                     cout << "Descrição: " << Descricao[i] << endl;
-                    cout << "DataDeVencimento: " << DataDeVencimento[i] << endl;
+                    cout << "DataDeVencimento (DD/MM/AAAA): " << DataDeVencimento[i] << endl;
                     cout << "Status: " << Status[i] << endl;
 
             }   
@@ -134,7 +135,7 @@ if (menu == 3){
     
     
     
-    }while (menu !=0);
+    }while (menu !=0); //(condiçao)
     
     return 0;
    
